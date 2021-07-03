@@ -27,10 +27,10 @@ rules:
     - intent: corona_help
     - action: user_form
     - active_loop: user_form
-    - slot_was_set:
-        - requested_slot: pin_code_confirmation
-    - slot_was_set:
-        - requested_slot: category_confirmation
+#    - slot_was_set:
+#        - requested_slot: pin_code_confirmation
+#    - slot_was_set:
+#        - requested_slot: category_confirmation
 
 
   - rule: Activate form

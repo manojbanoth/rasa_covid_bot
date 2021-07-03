@@ -62,11 +62,11 @@ class ValidateUserForm(FormValidationAction):
         if tracker.latest_message["intent"].get("name") == "corona_help":
             required_slots = ["pin_code_confirmation",'category_confirmation']
             print('required_slots_pin')
-        elif tracker.slots.get("category") == True:
-
-
-            required_slots = ['pin_code_confirmation', 'category_confirmation']
-            print('required_slots_slot')
+        # elif tracker.slots.get("category") == True:
+        #
+        #
+        #     required_slots = ['pin_code_confirmation', 'category_confirmation']
+        #     print('required_slots_slot')
 
 
             #if tracker.slots.get("pin_code_confirmation") is True:
