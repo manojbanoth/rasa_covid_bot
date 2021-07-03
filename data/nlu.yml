@@ -1,0 +1,259 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: thankyou
+  examples: |
+    - Thanks
+    - Thank you
+    - Thank you so much
+    - Thanks bot
+    - Thanks for that
+    - cheers
+    - cheers dude
+    - ok thanks!
+    - perfect thank you
+    - thanks a bunch for everything
+    - thanks for the help
+    - thanks a lot
+    - amazing, thanks
+    - cool, thanks
+    - cool thank you
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - am i talking to a person
+    - am i talking to a real person?
+    - am i talking to a robot?
+    - are you a human?
+    - are you a real person?
+    - are you real?
+    - can i contact a human being?
+    - i don't want to speak with a bot
+    - i don't want to talk
+    - i don't want to talk to a chatbot
+    - i don't want to talk with a chatbot
+    - i'd like to speak to a person
+    - is this a person?
+    - is this a real person or a bot?
+    - who am i talking to?
+    - you real?
+
+- intent: out_of_scope
+  examples: |
+    - please help with my ice cream it's dripping
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - i want a non dripping ice cream
+    - someone call the police i think the bot died
+    - show me a picture of a chicken
+    - neither
+    - I want french cuisine
+    - i am hungry
+    - restaurant
+    - can i be shown a gluten free restaurant
+    - i don't care!!!!
+    - i do not care how are you
+    - again?
+    - oh wait i gave you my work email address can i change it?
+    - hang on let me find it
+    - stop it, i do not care!!!
+    - how come?
+    - I changed my mind
+    - what?
+    - did i break you
+    - that link doesn't work!
+    - you already have that
+    - this is a really frustrating experience
+    - no stop
+    - Can I ask you questions first?
+    - is it a wasteland full of broken robot parts?
+    - can we keep chatting?
+    - talk to me
+    - who is your favourite robot?
+    - can you help me to build a bot
+    - a wood chuck can't chuck any kind of wood
+    - a wood chuck can't chuck wood
+    - are you wearing anything?
+    - can i arrange a taxi?
+    - can i book a taxi?
+    - can i order a pizza?
+    - give quiche a chance
+    - how much wood could a wood chuck chuck if a wood chuck would chuck wood?
+    - i am heavy weapons guy and this is my weapon
+    - i know kung-fu
+    - i need a taxi
+    - i want a pepperoni pizza
+    - i want to order a pizza
+    - i'd like a pizza please
+    - i'm all out of bubblegum
+    - i'm asking you to marry me
+    - it's an albany expression
+    - marry me
+    - now i have a machine gun ho-ho-ho!
+    - please marry me
+    - tell me what you're wearing?
+    - trial by stone!
+    - what are you wearing?
+    - will you marry me?
+    - you come to me on the day of my daughter's wedding
+    - you don't win friends with salad
+    - you're going to need a bigger boat
+    - fuck you
+    - oh my god
+
+#- intent: pin_code
+#  examples: |
+#    - [123456](pin_code)
+#    - here is my pin code [600036](pin_code)
+#   - [507211](pin_code) is my pin code
+#    - hey dude [6000010] is my code
+#    - my pin code [507210](pin_code)
+
+- intent: corona_help
+  examples: |
+    - corona help
+    - please help reagading corona
+    - can you help with corona related
+    - covid help
+    - covid-19 help
+    - could you help with covid19
+- synonym: corona
+  examples: |
+    - coronavirus
+    - covid
+    - covid-19
+    - covid19
+    - covid 19
+    - virus
+
+- intent: pin_code
+  examples: |
+    - my pin code is [110001]{"entity": "pin_code", "value": "110001"}
+    - [500081]{"entity": "pin_code", "value": "500081"}
+    - [600036]{"entity": "pin_code", "value": "600036"}
+    - pin code is [600036]{"entity": "pin_code", "value": "600036"}
+    - pin code is [500081]{"entity": "pin_code", "value": "500081"}
+    - [110002]{"entity": "pin_code", "value": "110002"}
+    - [Free Food]{"entity": "category", "value": "Free Food"} in [500081]{"entity": "pin_code", "value": "500081"}
+    - [Covid-19 testing labs]{"entity": "category", "value": "CoVID-19 Testing Lab"} in [110001]{"entity": "pin_code", "value": "110001"}
+    - [Hospitals and Centers]{"entity": "category", "value": "Hospitals and Centers"} in [600036]{"entity": "pin_code", "value": "600036"}
+    - I am looking for [Free Food]{"entity": "category", "value": "Free Food"} in [110001]{"entity": "pin_code", "value": "110001"}
+    - I am looking for [Covid-19 testing labs]{"entity": "category", "value": "CoVID-19 Testing Lab"} in [500081]{"entity": "pin_code", "value": "500081"}
+    - [Free Food]{"entity": "category", "value": "Free Food"} in [580003]{"entity": "pin_code", "value": "580003"}
+    - [CoVID-19 Testing Lab]{"entity": "category", "value": "CoVID-19 Testing Lab"} in [110001]{"entity": "pin_code", "value": "110001"}
+    - [Fundraisers]{"entity": "category", "value": "Fundraisers"} in [570004]{"entity": "pin_code", "value": "570004"}
+- intent: category
+  examples: |
+    - [CoVID-19 Testing Lab]{"entity": "category", "value": "CoVID-19 Testing Lab"}
+    - [Free Food]{"entity": "category", "value": "Free Food"}
+    - [Fundraisers]{"entity": "category", "value": "Fundraisers"}
+    - [Hospitals and Centers]{"entity": "category", "value": "Hospitals and Centers"}
+    - [Delivery]{"entity": "category", "value": "Delivery"}
+    - [Police]{"entity": "category", "value": "Police"}
+    - [Government Helpline]{"entity": "category", "value": "Government Helpline"}
+    - [Mental well being and Emotional Support]{"entity": "category", "value": "Mental well being and Emotional Support"}
+    - [Accomodation and Shelter Homes]{"entity": "category", "value": "Accomodation and Shelter Homes"}
+    - [Senior Citizen Support]{"entity": "category", "value": "Senior Citizen Support"}
+    - [Transportation]{"entity": "category", "value": "Transportation"}
+    - [Community Kitchen]{"entity": "category", "value": "Community Kitchen"}
+    - [Ambulance]{"entity": "category", "value": "Ambulance"}
+    - [Fire Brigade]{"entity": "category", "value": "Fire Brigade"}
+    - [Quarantine Faciltiy]{"entity": "category", "value": "Quarantine Facility"}
+    - [Helpline for Cyclone Amphan]{"entity": "category", "value": "Helpline for Cyclone Amphan"}
+    - [Fever Clinci]{"entity": "category", "value": "Fever Clinic"}
+    - [Other]{"entity": "category", "value": "Other"}
+- intent: category_confirmation
+  examples: |
+    - [Yes]{"entity": "pin_code_confirmation", "value": "Yes"}
+    - [No]{"entity": "pin_code_confirmation", "value": "No"}
+- intent: confirm_resource_category
+  examples: |
+    - [Yes]{"entity": "category_confirmation", "value": "Yes"}
+    - [No]{"entity": "category_confirmation", "value": "No"}
+

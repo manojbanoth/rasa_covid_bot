@@ -1,0 +1,26 @@
+version: "2.0"
+
+
+
+
+ # - story: pin_code
+ #   steps:
+ #   - intent: greet
+ #   - action: utter_greet
+ #   - intent: corona_help
+ #   - action: user_form
+ #   - action: utter_ask_pin_code
+ #   - intent: pin_code
+ #   - active_loop: user_form
+ #   - active_loop: null
+ #   - action: utter_ask_category
+ #   - action: utter_submit
+
+#stories:
+# - story:
+ #   steps:
+ #     - intent: corona_help
+ #     - action: utter_ask_pin_code_confirmation
+  #    - action: utter_ask_category_confirmation
+#      - action: utter_submit
+

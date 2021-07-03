@@ -1,0 +1,186 @@
+version: '2.0'
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - thankyou
+  - out_of_scope
+  - corona_help
+  - pin_code:
+       use_entities:
+        - pin_code
+  - pin_code_confirmation:
+       use_entities:
+        - pin_code_confirmation
+  - category:
+       use_entities:
+        - category
+  - category_confirmation:
+       use_entities:
+        - category_confirmation
+
+entities:
+  - pin_code
+  - pin_code_confirmation
+  - category
+  - category_confirmation
+#Required slots
+slots:
+  pin_code:
+    type: text
+    influence_conversation: false
+
+  category:
+    type: text
+    influence_conversation: false
+
+  pin_code_confirmation:
+    type: categorical
+    influence_conversation: true
+
+  category_confirmation:
+    type: categorical
+    influence_conversation: true
+
+#forms
+forms:
+  user_form:
+    required_slots:
+        pin_code:
+          - type: from_entity
+            entity: pin_code
+        category:
+          - type: from_entity
+            entity: category
+
+        pin_code_confirmation:
+          - type: from_entity
+            entity: pin_code_confirmation
+
+        category_confirmation:
+          - type: from_entity
+            entity: category_confirmation
+
+actions:
+  - validate_user_form
+  - user_Intent
+  - action_submit
+
+responses:
+  utter_greet:
+    - text: 'Hey! How may I help you today?'
+
+  utter_cheer_up:
+    - text: 'Here is something to cheer you up:'
+      image: 'https://i.imgur.com/nGF1K8f.jpg'
+
+  utter_did_that_help:
+    - text: 'Did that help you?'
+
+  utter_happy:
+    - text: 'Great, carry on!'
+
+  utter_goodbye:
+    - text: 'Bye'
+  utter_please_rephrase:
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_iamabot:
+    - text: 'I am a bot, powered by Rasa.'
+  utter_thankyou:
+    - text: 'Thank You for the visiting'
+  utter_out_of_scope:
+    - text: "Sorry I don't know the answer, can you please ask questions related to COVID-19?"
+  ### Asking user input ex:-600036
+  utter_ask_pin_code:
+    - text: 'Please share your PIN code'
+  ### Asking user Input as template of menu
+  utter_ask_category:
+    - text: 'What are you looking for?'
+      buttons:
+        - title: 'COVID-19 Testing Labs'
+          payload: '/category{{"category": "COVID-19 Testing Labs"}}'
+
+        - title: 'Free_Food'
+          payload: '/category{{"category": "Free Food"}}'
+
+        - title: 'Hospitals and Centers'
+          payload: '/category{{"category": "Hospitals and Centers"}}'
+
+        - title: 'Fundraisers'
+          payload: '/category{{"category": "Fundraisers"}}'
+
+        - title: 'Delivery'
+          payload: '/category{{"category": "Delivery"}}'
+
+        - title: 'Police'
+          payload: '/category{{"category": "Police"}}'
+
+        - title: 'Government Helpline'
+          payload: '/category{{"category": "Government Helpline"}}'
+
+        - title: 'Mental well being and Emotional Support'
+          payload: '/category{{"category": "Mental well being and Emotional Support"}}'
+
+        - title: 'Accommodation and Shelter Homes'
+          payload: '/category{{"category": "Accomodation and Shelter Homes"}}'
+
+        - title: 'Senior Citizen Support'
+          payload: '/category{{"category": "Senior Citizen Support"}}'
+
+        - title: 'Transportation'
+          payload: '/category{{"category": "Transportation"}}'
+
+        - title: 'Community Kitchen'
+          payload: '/category{{"category": "Community Kitchen"}}'
+
+        - title: 'Ambulance'
+          payload: '/category{{"category": "Ambulance"}}'
+
+        - title: 'Fire Brigade'
+          payload: '/category{{"category": "Fire Brigade"}}'
+
+        - title: 'Quarantine Facilty'
+          payload: '/category{{"category": "Quarantine Facilty"}}'
+
+        - title: 'Helpline for cyclone Amphan'
+          payload: '/category{{"category": "Helpline for Cyclone Amphan"}}'
+
+        - title: 'Fever Clinic'
+          payload: '/category{{"category": "Fever Clinic"}}'
+
+        - title: 'Other'
+          payload: '/category{{"category": "Other"}}'
+
+  utter_ask_pin_code_confirmation:
+    - text: 'Do you want to get the resources for -{pin_code}. Press Yes to confirm and No to change another pincode'
+      buttons:
+        - title: 'Yes'
+          payload: '/pin_code_confirmation{{"pin_code_confirmation": "Yes"}}'
+
+        - title: 'No'
+          payload: '/pin_code_confirmation{{"pin_code_confirmation": "No"}}'
+
+  utter_ask_category_confirmation:
+    - text: 'Do you want to get {category} resources. Press Yes to confirm and No to change.'
+      buttons:
+        - title: 'Yes'
+          payload: '/category_confirmation{{"category_confirmation": "Yes"}}'
+
+        - title: 'No'
+          payload: '/category_confirmation{{"category_confirmation": "No"}}'
+
+  utter_submit:
+    - text: "Show results for {pin_code} and {category}\n
+        - Contact: {contact}\n
+        - Description: {description}\n
+        - Organisation: {organisation}\n
+        - Phone: {phone}\n
+        - State: {state}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
